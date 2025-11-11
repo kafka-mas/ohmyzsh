@@ -1,8 +1,9 @@
 if [ $UID -eq 0 ]; then NCOLOR="red"; else NCOLOR="white"; fi
+if [ $UID -eq 0 ]; then PROMPTCOLOR="red"; else PROMPTCOLOR="green"; fi
 
 PROMPT=$'
 %{$fg[blue]%}%/%{$reset_color%} $(git_prompt_info)$(bzr_prompt_info)%{$fg[$NCOLOR]%}[%n@%m]%{$reset_color%} %{$fg[white]%}[%T]%{$reset_color%}
-%{$fg_bold[green]%}>%{$reset_color%} '
+%{$fg_bold[$PROMPTCOLOR]%}>%{$reset_color%} '
 
 PROMPT2="%{$fg_bold[black]%}%_> %{$reset_color%}"
 
